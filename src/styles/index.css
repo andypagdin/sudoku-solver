@@ -1,0 +1,45 @@
+#app {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#board {
+  position: relative;
+  width: 900px;
+  height: 900px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+.row {
+  height: 33.3%;
+  width: 100%;
+}
+
+.subgrid {
+  display: inline-block;
+  height: 100%;
+  width: 33.3%;
+  outline: 1px solid #344861;
+}
+
+.subgrid-row {
+  width: 100%;
+  height: 33.3%;
+}
+
+.square {
+  display: inline-block;
+  width: 33.3%;
+  height: 100%;
+  border: 1px solid #e1e6f0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10%;
+  font-size: 25px;
+}

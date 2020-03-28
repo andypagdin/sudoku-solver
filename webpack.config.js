@@ -12,6 +12,7 @@ module.exports = {
         filename: './index-bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    stats: 'minimal',
     module: {
         rules: [
             {
