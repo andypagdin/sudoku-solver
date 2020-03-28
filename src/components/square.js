@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Square = value => {
+const Square = ({ value }) => {
   return (
-    <div className="square">{Math.floor(Math.random() * 10)}</div>
+    <div className="square">{value}</div>
   )
 }
 

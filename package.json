@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest && npm run lint",
     "build": "npm run lint && webpack",
-    "prestart": "npm run build",
     "start": "webpack-dev-server --open",
     "lint": "eslint ./src",
     "redux": "cd scripts && sh add-redux.sh && cd ../"
