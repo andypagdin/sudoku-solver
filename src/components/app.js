@@ -1,17 +1,27 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
-import Board from './board'
-import PageNotFound from './page-not-found'
+import React, { Fragment, useState } from 'react'
+import Board from './Board'
+import { solve } from '../solve'
 
 const App = () => {
+  const initialProblem = [
+    [0, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 0, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 0, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  ]
+
+  const [problem, setProblem] = useState(initialProblem)
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Board} />
-        <Route path="*" component={PageNotFound} />
-      </Switch>
-    </Router>
+    <Fragment>
+      <Board problem={problem} />
+      <button onClick={() => solve(problem)}>Solve</button>
+    </Fragment>
   )
 }
 

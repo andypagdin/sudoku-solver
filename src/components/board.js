@@ -1,29 +1,18 @@
 import React from 'react'
-import SubGrid from './subgrid'
+import Cell from './Cell'
 
-const Board = () => {
-  const problem = [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  ]
-
-  const subgrids = []
+const Board = ({ problem }) => {
+  const cells = []
   for (let i = 0; i < problem.length; i++) {
-    subgrids.push(<SubGrid grid={problem[i]} />)
+    let row = problem[i]
+    for (let x = 0; x < row.length; x++) {
+      cells.push(<Cell value={row[x]} />)
+    }
   }
 
   return (
     <div id="board">
-      {subgrids}
+      {cells}
     </div>
   )
 }

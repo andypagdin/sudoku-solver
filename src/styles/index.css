@@ -6,39 +6,18 @@
 }
 
 #board {
-  position: relative;
-  width: 900px;
-  height: 900px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  height: 700px;
+  width: 700px;
   margin: 0 auto;
+  background-color: aliceblue;
 }
 
-.row {
-  height: 33.3%;
-  width: 100%;
-}
-
-.subgrid {
+.cell {
   display: inline-block;
-  width: 33.3%;
-  outline: 1px solid #344861;
-}
-
-.subgrid-row {
-  width: 100%;
-  height: 33.3%;
-}
-
-.square {
-  display: inline-block;
-  width: 33.3%;
-  height: 100%;
-  border: 1px solid #e1e6f0;
-  box-sizing: border-box;
+  width: 77.7px;
+  height: 77.7px;
+  line-height: 77.7px;
   text-align: center;
-  padding: 10%;
-  font-size: 25px;
+  vertical-align: middle;
+  outline: 1px solid black;
 }
