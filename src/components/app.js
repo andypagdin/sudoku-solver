@@ -1,26 +1,31 @@
 import React, { Fragment, useState } from 'react'
 import Board from './Board'
-import { solve } from '../solve'
+import Solver from '../solver'
 
 const App = () => {
   const initialProblem = [
-    [0, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 0, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 0, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    [0, 9, 0, 0, 0, 0, 0, 0, 6],
+    [0, 0, 0, 9, 6, 0, 4, 8, 5],
+    [0, 0, 0, 5, 8, 1, 0, 0, 0],
+    [0, 0, 4, 0, 0, 0, 0, 0, 0],
+    [5, 1, 7, 2, 0, 0, 9, 0, 0],
+    [6, 0, 2, 0, 0, 0, 3, 7, 0],
+    [1, 0, 0, 8, 0, 4, 0, 2, 0],
+    [7, 0, 6, 0, 0, 0, 8, 1, 0],
+    [3, 0, 0, 0, 9, 0, 0, 0, 0]
   ]
 
   const [problem, setProblem] = useState(initialProblem)
 
+  const handleClick = () => {
+    const result = Solver.solvePuzzle(problem)
+    setProblem([...result])
+  }
+
   return (
     <Fragment>
       <Board problem={problem} />
-      <button onClick={() => solve(problem)}>Solve</button>
+      <button onClick={handleClick}>Solve</button>
     </Fragment>
   )
 }
