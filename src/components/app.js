@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import Board from './Board'
 import Solver from '../solver'
 
@@ -23,10 +23,12 @@ const App = () => {
   }
 
   return (
-    <Fragment>
+    <div id="container">
       <Board problem={problem} />
-      <button onClick={handleClick}>Solve</button>
-    </Fragment>
+      <div id="controls">
+        <button class="solveBtn" onClick={handleClick}>Solve</button>
+      </div>
+    </div>
   )
 }
 
